@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coffee?</title>
   <style>
     body {
@@ -11,20 +11,26 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       margin: 0;
+      padding: 2em;
       text-align: center;
     }
+
     h1 {
       font-size: 2em;
       margin-bottom: 0.5em;
     }
+
     .buttons {
       display: flex;
       gap: 1em;
       margin-top: 1em;
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
     button {
       padding: 0.8em 1.5em;
       font-size: 1em;
@@ -35,17 +41,54 @@
       color: white;
       transition: background 0.3s;
     }
+
     button:hover {
       background-color: #555;
+    }
+
+    #contact-form {
+      margin-top: 3em;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.6em;
+      margin-bottom: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    form button {
+      width: 100%;
+      background-color: #00704A;
+    }
+
+    form button:hover {
+      background-color: #00965E;
     }
   </style>
 </head>
 <body>
+
   <h1>So… you scanned. Now what?</h1>
   <p>Pick your path:</p>
+
   <div class="buttons">
-    <button onclick="alert('You owe me a coffee now 😄')">Get me a coffee</button>
+    <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Get me a coffee</button>
     <button onclick="alert('Let me get you one ☕')">Get you a coffee</button>
   </div>
+
+  <div id="contact-form">
+    <h2>Say hi 👋</h2>
+    <form action="https://formspree.io/f/xyzjavqb" method="POST">
+      <input type="email" name="email" placeholder="maxazimy@gmail.com" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
 </body>
 </html>
