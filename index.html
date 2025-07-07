@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee?</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fefefe;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    .buttons {
+      display: flex;
+      gap: 1em;
+      margin-top: 1em;
+    }
+    button {
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>So… you scanned. Now what?</h1>
+  <p>Pick your path:</p>
+  <div class="buttons">
+    <button onclick="alert('You owe me a coffee now 😄')">Get me a coffee</button>
+    <button onclick="alert('Let me get you one ☕')">Get you a coffee</button>
+  </div>
+</body>
+</html>
