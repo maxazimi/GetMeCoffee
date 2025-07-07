@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coffee?</title>
+  <title>Let's Have Coffee</title>
+  <link rel="icon" href="https://emojiapi.dev/api/v1/2615.svg" type="image/svg+xml">
   <style>
     body {
       font-family: sans-serif;
@@ -20,13 +21,24 @@
 
     h1 {
       font-size: 2em;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-top: 0;
+      color: #555;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #444;
     }
 
     .buttons {
       display: flex;
       gap: 1em;
-      margin-top: 1em;
+      margin-top: 1.5em;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -48,9 +60,16 @@
 
     #contact-form {
       margin-top: 3em;
-      max-width: 300px;
+      max-width: 320px;
       width: 100%;
+      opacity: 0;
       display: none;
+      transition: opacity 0.5s ease;
+    }
+
+    #contact-form.show {
+      display: block;
+      opacity: 1;
     }
 
     form input, form textarea {
@@ -74,8 +93,9 @@
 </head>
 <body>
 
-  <h1>So… you scanned. Now what?</h1>
-  <p>Pick your path:</p>
+  <h1>I'm Max 🙂</h1>
+  <h2>Let's have a coffee</h2>
+  <p>Which one?</p>
 
   <div class="buttons">
     <button onclick="showForm('me')">Buy me a coffee</button>
@@ -85,8 +105,9 @@
   <div id="contact-form">
     <h2 id="form-title">Say hi 👋</h2>
     <form action="https://formspree.io/f/xyzjavqb" method="POST">
-      <input type="email" name="email" placeholder="Your email" required />
+      <input type="email" name="email" placeholder="Number / ID / Email" required />
       <textarea name="message" id="message-box" placeholder="Your message" required></textarea>
+      <input type="hidden" name="_redirect" value="https://www.maxlab.ir/thanks.html" />
       <button type="submit">Send</button>
     </form>
   </div>
@@ -105,7 +126,7 @@
         messageBox.placeholder = "Tell me what you like to drink.";
       }
 
-      form.style.display = 'block';
+      form.classList.add('show');
       form.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
